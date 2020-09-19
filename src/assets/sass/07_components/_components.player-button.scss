@@ -1,0 +1,80 @@
+/* ==========================================================================
+   #PLAYER-BUTTON
+   ========================================================================== */
+
+.c-player-button {
+  @include button-reset;
+  padding: sp(tiny);
+  transition:
+    background-color $hover-transition,
+    box-shadow $hover-transition;
+  @include theme-transition(background-color box-shadow);
+  border-radius: 50%;
+  touch-action: manipulation;
+  margin-left: sp(xmicro);
+  margin-right: sp(xmicro);
+
+  @media (hover: hover) {
+
+    &:hover {
+      background-color: var(--state-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--state-color-active);
+  }
+
+  @include focus-style {
+    outline: none;
+    box-shadow: 0 0 0 3px sem-color(link) inset;
+    background-color: sem-color(link, .375);
+    border-radius: 50%;
+  }
+
+  > svg {
+    fill: sem-color(text);
+    @include theme-transition(fill);
+    display: block;
+    @include ms-respond(--player-icon-size, 1.55);
+    height: var(--player-icon-size);
+    width: var(--player-icon-size);
+  }
+
+  &[disabled] {
+    background-color: inherit;
+    cursor: not-allowed;
+
+    > svg {
+      fill: sem-color(disabled);
+    }
+  }
+}
+
+  .c-player-button--medium {
+    > svg {
+      height: calc(var(--player-icon-size) * 1.25);
+      width: calc(var(--player-icon-size) * 1.25);
+    }
+  }
+
+  .c-player-button--large {
+    > svg {
+      height: calc(var(--player-icon-size) * 1.25 * 1.25);
+      width: calc(var(--player-icon-size) * 1.25 * 1.25);
+    }
+  }
+
+  .c-player-button--flush {
+    margin-left: calc(#{sp(tiny)} * -1);
+    margin-right: calc(#{sp(tiny)} * -1);
+    margin-top: calc(#{sp(micro)} * -1);
+  }
+
+
+  .c-player-button--small {
+    > svg {
+      height: var(--player-icon-size);
+      width: var(--player-icon-size);
+    }
+  }

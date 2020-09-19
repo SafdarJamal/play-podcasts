@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.js-focus-visible .focus-visible {
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: sem-color(link);
+}

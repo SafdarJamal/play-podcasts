@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/**
+ * 1. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ */
+
+:root {
+  overflow-y: scroll; /* [1] */
+  min-height: 100%; /* [2] */
+  font-size: 1em;
+  font-family: IBM Plex Sans, sans-serif;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
+  font-variation-settings: "wdth" 95;
+  line-height: 1.55;
+  font-weight: fw(regular);
+  -webkit-tap-highlight-color: transparent;
+  background-color: sem-color(background);
+  color: sem-color(text);
+  @include theme-transition(background-color color);
+  -webkit-font-smoothing: antialiased;
+}
+
+:root.playbar-active {
+  padding-bottom: var(--player-height);
+}

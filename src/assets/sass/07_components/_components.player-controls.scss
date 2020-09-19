@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #PLAYER-CONTROLS
+   ========================================================================== */
+
+
+.c-player-controls {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+  .c-player-controls__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

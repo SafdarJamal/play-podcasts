@@ -1,0 +1,68 @@
+/* ==========================================================================
+   #NOW-PLAYING-MEDIA-INFO
+   ========================================================================== */
+
+.c-now-playing-media-info {
+  display: grid;
+  width: 100%;
+  grid-gap: sp(small);
+  grid-template-columns: calc(#{sp()} * 3) 1fr;
+  text-decoration: none;
+  padding: calc(#{sp()} / 2);
+  margin: calc(#{sp()} / 2);
+  transition:
+    background-color $hover-transition;
+  @include theme-transition(background-color);
+  border-radius: var(--rounded-radius);
+}
+
+a.c-now-playing-media-info {
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--state-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--state-color-active);
+  }
+
+  @include focus-style {
+    outline: none;
+    box-shadow: 0 0 0 3px sem-color(link) inset;
+    background-color: sem-color(link, .375);
+    border-radius: var(--rounded-radius);
+  }
+}
+
+
+  .c-now-playing-media-info__artwork {
+    align-self: center;
+  }
+
+  .c-now-playing-media-info__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+  }
+
+    .c-now-playing-media-info__episode-title,
+    .c-now-playing-media-info__podcast-title {
+      flex-shrink: 0;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .c-now-playing-media-info__episode-title {
+      line-height: 1.5;
+    }
+
+    .c-now-playing-media-info__podcast-title {
+      line-height: 1.25;
+    }

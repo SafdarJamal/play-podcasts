@@ -3,10 +3,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 
 async function savePodcastImage(filename, url) {
-
   try {
-    const stream = await fetch(url)
-      .then(res => res.body);
+    const stream = await fetch(url).then(res => res.body);
 
     const path = `./public/img/podcast-images/${filename}.png`;
 
@@ -25,7 +23,7 @@ async function savePodcastImage(filename, url) {
  * @returns {Promise}
  */
 async function saveImage(path, imageStream) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     try {
       console.log(path);
 
@@ -45,18 +43,14 @@ async function saveImage(path, imageStream) {
 
       output.on('finish', function () {
         resolve();
-      })
+      });
 
-      imageStream
-        .pipe(transformer)
-        .pipe(output);
-
+      imageStream.pipe(transformer).pipe(output);
     } catch (e) {
       console.log(e);
       reject(e);
     }
   });
 }
-
 
 module.exports = savePodcastImage;

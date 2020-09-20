@@ -1,7 +1,5 @@
 const createDOMPurify = require('dompurify');
-const {
-  JSDOM
-} = require('jsdom');
+const { JSDOM } = require('jsdom');
 const autop = require('autop');
 const { DateTime } = require('luxon');
 const he = require('he');
@@ -54,8 +52,8 @@ function getRSSSummary(post) {
 }
 
 function getItunesSubtitle(post) {
-  if (post["itunes:subtitle"]) {
-    const subtitle = post["itunes:subtitle"]["#"];
+  if (post['itunes:subtitle']) {
+    const subtitle = post['itunes:subtitle']['#'];
     if (subtitle) {
       return he.decode(truncate(subtitle));
     }
@@ -64,12 +62,12 @@ function getItunesSubtitle(post) {
 }
 
 function getItunesSummary(post) {
-  return post["itunes:summary"];
+  return post['itunes:summary'];
 }
 
 function getItunesDuration(post) {
-  if (post["itunes:duration"]) {
-    return post["itunes:duration"]["#"];
+  if (post['itunes:duration']) {
+    return post['itunes:duration']['#'];
   }
   return null;
 }
@@ -182,4 +180,4 @@ module.exports = {
   getDate,
   getPodcastMeta,
   parseDuration
-}
+};

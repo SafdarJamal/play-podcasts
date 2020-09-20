@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useAudioElement } from '../../AudioElementProvider';
 import { Slider } from '@rmwc/slider'; // https://rmwc.io/sliders
 import * as Icon from './buttons/icons';
@@ -31,7 +31,10 @@ export default function VolumeControls() {
 
   return (
     <div className="c-volume-slider u-padding-left u-padding-right-large">
-      <button onClick={mute} className="c-volume-slider__icon c-player-button c-player-button--small">
+      <button
+        onClick={mute}
+        className="c-volume-slider__icon c-player-button c-player-button--small"
+      >
         <VolumeIcon isMuted={isMuted} volume={volume} />
       </button>
       <Slider
@@ -45,18 +48,18 @@ export default function VolumeControls() {
   );
 }
 
-function VolumeIcon({isMuted, volume}) {
+function VolumeIcon({ isMuted, volume }) {
   if (isMuted) {
-    return <Icon.VolumeOff />
+    return <Icon.VolumeOff />;
   }
 
   if (volume === 0) {
-    return <Icon.VolumeMute / >
+    return <Icon.VolumeMute />;
   }
 
-  if (volume < .66) {
-    return <Icon.VolumeDown />
+  if (volume < 0.66) {
+    return <Icon.VolumeDown />;
   }
 
-  return <Icon.VolumeUp />
+  return <Icon.VolumeUp />;
 }

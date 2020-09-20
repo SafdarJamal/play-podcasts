@@ -1,16 +1,16 @@
 import React from 'react';
 import AppStateProvider from './AppStateProvider';
 import AudioElementProvider from './AudioElementProvider';
-import PodcastAppRouter from './components/PodcastAppRouter';
+import AppRouter from './components/AppRouter';
 
-function PodcastApp() {
+function App() {
   return (
     <AppStateProvider>
       <AudioElementProvider>
-        <PodcastAppRouter />
+        <AppRouter />
       </AudioElementProvider>
     </AppStateProvider>
   );
 }
 
-export default PodcastApp;
+export default App;

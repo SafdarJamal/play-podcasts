@@ -6,7 +6,7 @@ export function useAudioElement() {
   return useContext(AudioElementContext);
 }
 
-export default function AudioElementProvider({children}) {
+export default function AudioElementProvider({ children }) {
   const audioElement = useRef(null);
 
   return (

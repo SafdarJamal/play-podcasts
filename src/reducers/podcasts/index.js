@@ -4,7 +4,7 @@ export default function podcasts(state = {}, action) {
   return {
     byUrl: byUrl(state.byUrl, action),
     categories: state.categories
-  }
+  };
 }
 
 export function getPodcast(state, url) {

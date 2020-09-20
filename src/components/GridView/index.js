@@ -9,31 +9,24 @@ export default function GridView({ category }) {
   useDocumentTitle(category.title);
   const { podcasts } = useAppState();
 
-  const podcastGridItems = category.podcasts.map(function(url) {
+  const podcastGridItems = category.podcasts.map(function (url) {
     const podcastMeta = getPodcastMeta(podcasts, url);
-    return <PodcastGridItem podcastMeta={podcastMeta} key={url} />
+    return <PodcastGridItem podcastMeta={podcastMeta} key={url} />;
   });
 
-  return (
-    <GridLayout title={category.title}>
-      {podcastGridItems}
-    </GridLayout>
-  );
+  return <GridLayout title={category.title}>{podcastGridItems}</GridLayout>;
 }
 
 function GridLayout({ title, children }) {
   return (
     <>
       <h1 className="ts-page-title u-margin-bottom-xxlarge">{title}</h1>
-      <ul className="c-podcast-grid u-margin-bottom-xlarge">
-        {children}
-      </ul>
+      <ul className="c-podcast-grid u-margin-bottom-xlarge">{children}</ul>
     </>
   );
 }
 
 function PodcastGridItem({ podcastMeta }) {
-
   return (
     <li className="c-podcast-grid__item">
       <Link

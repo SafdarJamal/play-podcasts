@@ -5,9 +5,7 @@ import AudioElement from './AudioElement';
 import NowPlayingMediaInfo from './NowPlayingMediaInfo';
 import PlayerControls from './PlayerControls';
 import VolumeControls from './VolumeControls';
-import {
-  getEpisodeUrl
-} from '../../reducers/player';
+import { getEpisodeUrl } from '../../reducers/player';
 
 export default function Playbar() {
   const { player } = useAppState();
@@ -15,23 +13,32 @@ export default function Playbar() {
   const [currentTime, setCurrentTime] = useState(0);
 
   const episodeUrl = getEpisodeUrl(player);
-  const isOffscreen = ! episodeUrl;
+  const isOffscreen = !episodeUrl;
 
   useEffect(() => {
     document.documentElement.classList.toggle('playbar-active', !isOffscreen);
   }, [isOffscreen]);
 
   return (
-    <div className={classNames("c-playbar", { "is-offscreen": isOffscreen })}>
+    <div className={classNames('c-playbar', { 'is-offscreen': isOffscreen })}>
       <div className="c-playbar__audio">
-        <AudioElement controls={showAudioControls} setCurrentTime={setCurrentTime} />
+        <AudioElement
+          controls={showAudioControls}
+          setCurrentTime={setCurrentTime}
+        />
       </div>
       <div className="c-playbar__layout">
         <div className="c-playbar__start">
-          <NowPlayingMediaInfo episode={player.episode} podcastMeta={player.podcastMeta} />
+          <NowPlayingMediaInfo
+            episode={player.episode}
+            podcastMeta={player.podcastMeta}
+          />
         </div>
         <div className="c-playbar__middle">
-          <PlayerControls currentTime={currentTime} setShowAudioControls={setShowAudioControls} />
+          <PlayerControls
+            currentTime={currentTime}
+            setShowAudioControls={setShowAudioControls}
+          />
         </div>
         <div className="c-playbar__end">
           <VolumeControls />
@@ -40,4 +47,3 @@ export default function Playbar() {
     </div>
   );
 }
-

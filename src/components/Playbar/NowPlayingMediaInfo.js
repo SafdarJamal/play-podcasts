@@ -1,12 +1,8 @@
 import React from 'react';
-import {
-  Link,
-  useLocation,
-  useNavigate
-} from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import PodcastImage from '../PodcastImage';
 
-export default function NowPlayingMediaInfo({episode, podcastMeta}) {
+export default function NowPlayingMediaInfo({ episode, podcastMeta }) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -27,11 +23,11 @@ export default function NowPlayingMediaInfo({episode, podcastMeta}) {
           scrollToNowPlaying: true,
           blockScrollToTop: true
         }
-      })
+      });
     } else {
       navigate(to, {
         state: { scrollToNowPlaying: true }
-      })
+      });
     }
   }
 
@@ -46,17 +42,17 @@ export default function NowPlayingMediaInfo({episode, podcastMeta}) {
   }
 
   return (
-    <Link
-      to={to}
-      onClick={handleClick}
-      className="c-now-playing-media-info"
-    >
+    <Link to={to} onClick={handleClick} className="c-now-playing-media-info">
       <div className="c-now-playing-media-info__artwork">
         <PodcastImage podcastMeta={podcastMeta} isSmall={true} />
       </div>
       <div className="c-now-playing-media-info__content">
-        <div className="c-now-playing-media-info__episode-title ts-display-6">{ episode.title }</div>
-        <div className="c-now-playing-media-info__podcast-title ts-label">{ podcastMeta.title }</div>
+        <div className="c-now-playing-media-info__episode-title ts-display-6">
+          {episode.title}
+        </div>
+        <div className="c-now-playing-media-info__podcast-title ts-label">
+          {podcastMeta.title}
+        </div>
       </div>
     </Link>
   );

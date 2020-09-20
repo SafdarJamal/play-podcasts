@@ -1,25 +1,17 @@
-import React from "react";
+import React from 'react';
 import PlaybackBar from './PlaybackBar';
 import { useAppState } from '../../AppStateProvider';
 import { useAudioElement } from '../../AudioElementProvider';
 import { isDisabled } from '../../reducers/player';
-import {
-  PlayPauseButton,
-  PlayerButton
-} from "./buttons";
+import { PlayPauseButton, PlayerButton } from './buttons';
 import * as Icon from './buttons/icons';
 import useSkipControls from '../../hooks/useSkipControls';
 import useMediaSession from '../../hooks/useMediaSession';
 
-export default function PlayerControls({currentTime, setShowAudioControls}) {
+export default function PlayerControls({ currentTime, setShowAudioControls }) {
   const { player } = useAppState();
   const audioElement = useAudioElement();
-  const {
-    skipPrevious,
-    skipNext,
-    getPrevious,
-    getNext
-  } = useSkipControls();
+  const { skipPrevious, skipNext, getPrevious, getNext } = useSkipControls();
   useMediaSession();
 
   const disabled = isDisabled(player);
@@ -27,8 +19,7 @@ export default function PlayerControls({currentTime, setShowAudioControls}) {
   function handlePlayPause() {
     const audio = audioElement.current;
     if (audio.paused) {
-      audio.play()
-        .catch(e => console.log('playing failed or was interrupted'));
+      audio.play().catch(e => console.log('playing failed or was interrupted'));
     } else {
       audio.pause();
     }
@@ -50,7 +41,6 @@ export default function PlayerControls({currentTime, setShowAudioControls}) {
   return (
     <div className="c-player-controls u-padding-left u-padding-right">
       <div className="c-player-controls__buttons u-padding-top-micro">
-
         <PlayerButton onClick={skipPrevious} disabled={!previous}>
           <Icon.SkipPrevious />
         </PlayerButton>

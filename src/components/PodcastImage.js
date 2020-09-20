@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default function PodcastImage({podcastMeta, isSmall=false}) {
+export default function PodcastImage({ podcastMeta, isSmall = false }) {
   const { title } = podcastMeta;
 
   const src = getImageSrc(podcastMeta);
@@ -17,12 +17,12 @@ export default function PodcastImage({podcastMeta, isSmall=false}) {
 
   return (
     <div className={className}>
-      <img src={ src } alt={ title } className="o-ratio__content" />
+      <img src={src} alt={title} className="o-ratio__content" />
     </div>
   );
 }
 
-export function getImageSrc({image, originalImage}) {
+export function getImageSrc({ image, originalImage }) {
   if (image) {
     return image;
   } else if (originalImage) {

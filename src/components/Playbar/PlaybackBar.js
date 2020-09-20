@@ -5,7 +5,7 @@ import { Slider } from '@rmwc/slider'; // https://rmwc.io/sliders
 import classNames from 'classnames';
 import { isDisabled } from '../../reducers/player';
 
-export default function PlaybackBar({currentTime}) {
+export default function PlaybackBar({ currentTime }) {
   const { player } = useAppState();
   const audioElement = useAudioElement();
 
@@ -37,10 +37,9 @@ export default function PlaybackBar({currentTime}) {
   const disabled = isDisabled(player);
   const time = slider.active ? slider.value : currentTime;
 
-  const timeClassName = classNames(
-    "c-playback-bar__progress-time",
-    { "c-playback-bar__progress-time--disabled": disabled }
-  );
+  const timeClassName = classNames('c-playback-bar__progress-time', {
+    'c-playback-bar__progress-time--disabled': disabled
+  });
 
   return (
     <div className="c-playback-bar">
@@ -63,16 +62,15 @@ export default function PlaybackBar({currentTime}) {
       </div>
     </div>
   );
-};
+}
 
-function Time({seconds}) {
+function Time({ seconds }) {
   if (!seconds) return '00:00';
 
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
 
-  const pad = (n) => n.toString().padStart(2, '0');
+  const pad = n => n.toString().padStart(2, '0');
 
   return pad(mins) + ':' + pad(secs);
 }
-

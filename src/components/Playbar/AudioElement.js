@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { useAppDispatch } from '../../AppStateProvider';
 import { useAudioElement } from '../../AudioElementProvider';
 import useEventHandler from './hooks/useEventHandler';
 
-export default function AudioElement({controls, setCurrentTime}) {
+export default function AudioElement({ controls, setCurrentTime }) {
   const audioElement = useAudioElement();
   const dispatch = useAppDispatch();
 
@@ -52,10 +52,7 @@ export default function AudioElement({controls, setCurrentTime}) {
 
   return (
     <>
-      <audio
-        ref={audioElement}
-        controls={controls}
-      />
+      <audio ref={audioElement} controls={controls} />
     </>
-  )
+  );
 }

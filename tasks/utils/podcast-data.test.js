@@ -1,7 +1,4 @@
-const {
-  getDuration,
-  parseDuration
-} = require('./podcast-data');
+const { getDuration, parseDuration } = require('./podcast-data');
 
 test('can get duration from post object', () => {
   const post = require('../example-podcasts/example-podcast-exponent.json');
@@ -23,8 +20,11 @@ test('can parse duration', () => {
 test('can get podcast image', () => {
   const getPodcastData = require('../get-podcast-data');
 
-  return getPodcastData('https://www.theguardian.com/football/series/forgotten-stories-of-football/podcast.xml')
-    .then((data) => {
-      expect(data.meta.originalImage).toBe('https://uploads.guim.co.uk/2020/05/11/Forgotten_Stories_of_Football_Final_(1).jpg');
-    });
+  return getPodcastData(
+    'https://www.theguardian.com/football/series/forgotten-stories-of-football/podcast.xml'
+  ).then(data => {
+    expect(data.meta.originalImage).toBe(
+      'https://uploads.guim.co.uk/2020/05/11/Forgotten_Stories_of_Football_Final_(1).jpg'
+    );
+  });
 });

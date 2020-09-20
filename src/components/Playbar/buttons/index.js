@@ -1,7 +1,4 @@
-import PlayPauseButton from "./PlayPauseButton";
-import PlayerButton from "./PlayerButton";
+import PlayPauseButton from './PlayPauseButton';
+import PlayerButton from './PlayerButton';
 
-export {
-  PlayPauseButton,
-  PlayerButton
-};
+export { PlayPauseButton, PlayerButton };

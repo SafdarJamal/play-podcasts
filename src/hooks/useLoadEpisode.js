@@ -20,7 +20,6 @@ export default function useLoadEpisode() {
     });
 
     audio.load();
-    audio.play()
-      .catch(e => console.log('playing failed or was interrupted'));
-  }
+    audio.play().catch(e => console.log('playing failed or was interrupted'));
+  };
 }

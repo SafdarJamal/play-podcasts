@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/sass/main.scss';
-import PodcastApp from './PodcastApp';
+import App from './App';
 import 'focus-visible';
 import smoothscroll from 'smoothscroll-polyfill';
 import * as DarkTheme from './dark-theme';
@@ -11,7 +11,7 @@ smoothscroll.polyfill();
 
 ReactDOM.render(
   <React.StrictMode>
-    <PodcastApp />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

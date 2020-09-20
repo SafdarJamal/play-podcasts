@@ -538,6 +538,21 @@
       ]
     },
     {
+      "title": "Design",
+      "slug": "design",
+      "podcasts": [
+        "https://rss.simplecast.com/podcasts/1034/rss",
+        "https://feeds.99percentinvisible.org/99percentinvisible",
+        "https://designobserver.com/show.designmatters2009-10.xml",
+        "https://www.relay.fm/presentable/feed",
+        "http://googledesignmethod.libsyn.com/rss",
+        "http://designnotes.fm/rss",
+        "https://feeds.simplecast.com/4MvgQ73R",
+        "http://feeds.feedburner.com/uxpodcast",
+        "https://feeds.pacific-content.com/wireframe"
+      ]
+    },
+    {
       "title": "Business",
       "slug": "business",
       "podcasts": [
@@ -554,21 +569,6 @@
       ]
     },
     {
-      "title": "Design",
-      "slug": "design",
-      "podcasts": [
-        "https://rss.simplecast.com/podcasts/1034/rss",
-        "https://feeds.99percentinvisible.org/99percentinvisible",
-        "https://designobserver.com/show.designmatters2009-10.xml",
-        "https://www.relay.fm/presentable/feed",
-        "http://googledesignmethod.libsyn.com/rss",
-        "http://designnotes.fm/rss",
-        "https://feeds.simplecast.com/4MvgQ73R",
-        "http://feeds.feedburner.com/uxpodcast",
-        "https://feeds.pacific-content.com/wireframe"
-      ]
-    },
-    {
       "title": "Technology",
       "slug": "technology",
       "podcasts": [
@@ -577,22 +577,6 @@
         "https://feeds.megaphone.fm/gadget-lab",
         "https://daringfireball.net/thetalkshow/rss",
         "https://feeds.theoutline.com/tomorrow"
-      ]
-    },
-    {
-      "title": "Football",
-      "slug": "football",
-      "podcasts": [
-        "https://audioboom.com/channels/2402227.rss",
-        "https://audioboom.com/channels/5005036.rss",
-        "https://www.spreaker.com/show/3382900/episodes/feed",
-        "https://podcasts.files.bbci.co.uk/p06kyljg.rss",
-        "https://rss.acast.com/footballweekly",
-        "https://www.spreaker.com/show/3382902/episodes/feed",
-        "https://rss.acast.com/quicklykevin",
-        "https://rss.acast.com/athleticomince",
-        "https://feeds.simplecast.com/_cY16e7I",
-        "https://podcast.global.com/show/4329967/episodes/feed"
       ]
     }
   ]

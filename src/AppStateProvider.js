@@ -13,7 +13,7 @@ export function useAppDispatch() {
   return useContext(AppDispatchContext);
 }
 
-export default function AppStateProvider({children}) {
+export default function AppStateProvider({ children }) {
   const initialState = {
     podcasts: {
       byUrl,

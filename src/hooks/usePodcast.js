@@ -3,12 +3,12 @@ import { useAppDispatch } from '../AppStateProvider';
 
 export async function getPodcastData(url) {
   const res = await fetch('/.netlify/functions/get-recent-episodes', {
-    'method': 'POST',
-    'headers': {
+    method: 'POST',
+    headers: {
       'Content-Type': 'application/json'
     },
-    'body': JSON.stringify({
-      'url': url
+    body: JSON.stringify({
+      url: url
     })
   });
   const json = await res.json();

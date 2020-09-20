@@ -1,13 +1,8 @@
-import React, {useLayoutEffect} from 'react';
-import {
-  Link,
-  useLocation,
-  useResolvedLocation
-} from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { Link, useLocation, useResolvedLocation } from 'react-router-dom';
 import { useAppState } from '../../AppStateProvider';
 import ThemeToggle from './ThemeToggle';
 import SiteLogo from '../SiteLogo';
-
 
 export default function SiteHeader() {
   const { podcasts } = useAppState();
@@ -33,37 +28,39 @@ export default function SiteHeader() {
   );
 }
 
-function SiteLogoLink({className}) {
+function SiteLogoLink({ className }) {
   const location = useLocation();
-  const hidden = (location.pathname === "/");
+  const hidden = location.pathname === '/';
 
   useLayoutEffect(() => {});
 
   return (
-    <Link className={className} to="/" style={{visibility: hidden && "hidden"}}>
+    <Link
+      className={className}
+      to="/"
+      style={{ visibility: hidden && 'hidden' }}
+    >
       <SiteLogo />
     </Link>
   );
 }
 
-function SiteMenu({items}) {
+function SiteMenu({ items }) {
   return (
     <div className="c-site-menu">
       <nav className="c-site-menu__nav">
         <ul className="c-tab-menu">
-          {
-            items.map(({title, slug}) => <SiteMenuItem title={title} slug={slug} key={title} />)
-          }
+          {items.map(({ title, slug }) => (
+            <SiteMenuItem title={title} slug={slug} key={title} />
+          ))}
         </ul>
       </nav>
     </div>
   );
 }
 
-function SiteMenuItem({title, slug}) {
-  const classNames = [
-    "c-tab-menu__item"
-  ];
+function SiteMenuItem({ title, slug }) {
+  const classNames = ['c-tab-menu__item'];
 
   const link = '/' + slug;
 
@@ -73,19 +70,15 @@ function SiteMenuItem({title, slug}) {
   let locationPathname = location.pathname;
   let toLocationPathname = toLocation.pathname;
 
-  let isActive =
-    locationPathname.startsWith(toLocationPathname);
+  let isActive = locationPathname.startsWith(toLocationPathname);
 
   if (isActive) {
     classNames.push('is-active');
   }
 
   return (
-    <li className={classNames.join(" ")}>
-      <Link
-        to={link}
-        className="c-tab-menu__link c-tab-menu__link"
-      >
+    <li className={classNames.join(' ')}>
+      <Link to={link} className="c-tab-menu__link c-tab-menu__link">
         {title}
       </Link>
     </li>

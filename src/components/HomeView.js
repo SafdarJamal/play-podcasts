@@ -16,7 +16,7 @@ export default function HomeView() {
 
 function RSSForm() {
   let navigate = useNavigate();
-  const [rssFeed, setRssFeed] = useState("");
+  const [rssFeed, setRssFeed] = useState('');
 
   function isValidUrl(string) {
     try {
@@ -36,7 +36,8 @@ function RSSForm() {
   }
 
   function handleImFeelingLucky(event) {
-    const obsessedWithPodcast = "https://podcasts.files.bbci.co.uk/p0742833.rss"
+    const obsessedWithPodcast =
+      'https://podcasts.files.bbci.co.uk/p0742833.rss';
     navigate('/podcast?rss=' + encodeURIComponent(obsessedWithPodcast));
     event.preventDefault();
   }
@@ -59,10 +60,19 @@ function RSSForm() {
         />
       </div>
       <div className="c-rss-form__actions">
-        <button type="submit" className="c-rss-form__button" onClick={handleSubmit} disabled={disabled}>
+        <button
+          type="submit"
+          className="c-rss-form__button"
+          onClick={handleSubmit}
+          disabled={disabled}
+        >
           Play Podcast
         </button>
-        <button type="button" className="c-rss-form__button" onClick={handleImFeelingLucky}>
+        <button
+          type="button"
+          className="c-rss-form__button"
+          onClick={handleImFeelingLucky}
+        >
           I’m Feeling Lucky
         </button>
       </div>

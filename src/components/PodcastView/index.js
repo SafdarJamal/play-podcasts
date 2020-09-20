@@ -1,8 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import {
-  useAppState
-} from '../../AppStateProvider';
+import { useAppState } from '../../AppStateProvider';
 import Feed from './Feed';
 import PodcastHeader from './PodcastHeader';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
@@ -29,7 +27,9 @@ export default function PodcastView() {
   if (errorMessage && !isFetching) {
     return (
       <div className="u-margin-bottom-xxlarge">
-        <h1 className="ts-post-title u-text-center u-margin-bottom">Something went wrong.</h1>
+        <h1 className="ts-post-title u-text-center u-margin-bottom">
+          Something went wrong.
+        </h1>
         <p className="u-text-center">The podcast feed couldn’t be loaded.</p>
       </div>
     );
@@ -37,9 +37,8 @@ export default function PodcastView() {
 
   return (
     <>
-      { podcastMeta && <PodcastHeader podcastMeta={podcastMeta} />}
+      {podcastMeta && <PodcastHeader podcastMeta={podcastMeta} />}
       <Feed podcastUrl={podcastUrl} podcastMeta={podcastMeta} />
     </>
   );
-
 }

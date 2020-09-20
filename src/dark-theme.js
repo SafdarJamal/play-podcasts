@@ -9,8 +9,7 @@ function toggle() {
 
 function isDarkTheme() {
   return (
-    (darkThemeOS.matches && !switched) ||
-    (!darkThemeOS.matches && switched)
+    (darkThemeOS.matches && !switched) || (!darkThemeOS.matches && switched)
   );
 }
 
@@ -23,13 +22,13 @@ function updateTheme() {
 function switchTheme() {
   document.documentElement.classList.add('is-transitioning');
   requestAnimationFrame(function () {
-    requestAnimationFrame(function() {
+    requestAnimationFrame(function () {
       updateTheme();
-      setTimeout(function() {
+      setTimeout(function () {
         document.documentElement.classList.remove('is-transitioning');
       }, 340);
-    })
-  })
+    });
+  });
 }
 
 function updateHtmlClass(isDark) {
@@ -37,14 +36,13 @@ function updateHtmlClass(isDark) {
 }
 
 function updateMetaTag(isDark) {
-  const color = isDark ? '#212c31' : "fff";
+  const color = isDark ? '#212c31' : 'fff';
   document.getElementById('theme').setAttribute('content', color);
 }
 
 function saveTheme() {
   sessionStorage.setItem('darkmode', switched);
 }
-
 
 function loadTheme() {
   const val = sessionStorage.getItem('darkmode');
@@ -61,8 +59,4 @@ function init() {
   });
 }
 
-export {
-  init,
-  toggle,
-  isDarkTheme
-};
+export { init, toggle, isDarkTheme };
